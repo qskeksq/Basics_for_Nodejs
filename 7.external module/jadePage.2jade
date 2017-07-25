@@ -1,0 +1,12 @@
+html
+	head
+		title Index Page
+	body
+		h1 #{name}..!
+		h2=description
+		hr
+		- for(var 1=0; i<10; i++){
+			p
+				a(href="http://hanbit.co.kr", data-test="multiple Attribute") Go To Hanbit Media
+		-}
+		
