@@ -1,15 +1,45 @@
-// 1. http ¸ðµâ °¡Á®¿À±â
 var http = require('http');
+var port = 3000;
 
-// 2. ¼­¹ö ¸¸µé±â -- ÀÌº¥Æ® µ¿±âÈ­
-var server = http.createServer(function (request, response) {
+- ì„œë²„ ìƒì„±
+    ```javaScript
+    var server = http.createServer(()=>{
+        console.log('server created');
+    });
+    ```
 
-    response.writeHead(200, { 'Content-Type': 'text/html' });
-    response.end('<h1>hello wolrd</h1>');
+- ì„œë²„ ë“±ë¡
+    ```javaScript
+    server.listen(3000, ()=>{
+        console.log('server is running');
+    });
+    ```
 
-});
+- ì„œë²„ ì—°ê²°
+    ```javaScript
+    server.on('connection', (socket)=>{
+        var addr = socket.address;
+        console.log('server connected : ['+addr.address+', '+addr.port+']');
+    });
+    ```
 
-// 3. ¿¬°á
-server.listen(8080, function () {
-    console.log('Sever is Running');
-});
+- í´ë¼ì´ì–¸íŠ¸ ìš”ì²­ ì²˜ë¦¬
+    ```javaScript
+    server.on('request', (request, response)=>{
+        console.log('server request on');
+        console.dir(request);
+        console.dir(response);
+        response.writeHead(200, {'Content-Type':'text/html; charset=utf-8'});
+        response.end();
+    });
+    ```
+
+- ì„œë²„ ì¢…ë£Œ
+    ```javaScript
+    server.on('close', ()=>{
+        console.log('server closed');
+    });
+    ```
+
+
+
