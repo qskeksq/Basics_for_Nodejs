@@ -1,0 +1,27 @@
+1. 설치
+
+2. 환경변수 설정
+
+3. server 디렉토리에 data 만들고 mongod --dbpath data경로
+
+4. 클라이언트 띄우고
+
+db.collection.insert({  :  });
+db.collection.find();
+db.student.insert({});
+db.student.find();
+db.student.find().count();
+db.student.find({:}).count();
+
+switch student(테이블 이름)
+show tables
+
+show databases
+user 데이터베이스 이름
+
+db.user.remove({})
+
+등 해본다
+
+5. 데이터베이스는 없을 때 연결하면 자동으로 데이터베이스 자체를 생성해줌
+
